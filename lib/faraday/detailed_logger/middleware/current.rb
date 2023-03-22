@@ -72,7 +72,7 @@ module Faraday
 
         logger.tagged(*tags) do
           log_response_status(status) { formatter.response(env) }
-          logger.debug { formatter.response_body(env) }
+          logger.info { formatter.response_body(env) }
         end
       end
 
@@ -86,7 +86,7 @@ module Faraday
       def on_request(env)
         logger.tagged(*tags) do
           logger.info { formatter.request(env) }
-          logger.debug { formatter.request_body(env) }
+          logger.info { formatter.request_body(env) }
         end
       end
 
